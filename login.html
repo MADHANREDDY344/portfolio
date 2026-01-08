@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Register</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #13182b;
+    color: white;
+}
+
+
+.form-wrapper {
+    width: 420px;
+    margin: 80px auto;
+    padding: 30px;
+    background: #1a2036;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+input:hover {
+    background: #161b30;
+    border: 2px solid chartreuse;
+    box-shadow: 0 0 10px chartreuse;
+    color: #ddd;
+}
+
+
+button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #ff5757;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff8080;
+    transform: scale(1.05);
+}
+
+
+.switch {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.switch a {
+    color: chartreuse;
+    text-decoration: none;
+}
+
+.switch a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+</head>
+<body>
+
+<div class="form-wrapper">
+
+    
+    <div id="loginBox">
+        <h2>Login</h2>
+        <input type="email" placeholder="Enter Email" required>
+        <input type="password" placeholder="Enter Password" required>
+        <button onclick="goToHome()">Login</button>
+
+        <div class="switch">
+            <p>Don't have an account?
+                <a href="#" onclick="showRegister()">Register Here</a>
+            </p>
+        </div>
+    </div>
+
+    
+    <div id="registerBox" style="display:none;">
+        <h2>Create Account</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Create Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+
+        <button onclick="showLogin()">Register</button>
+
+        <div class="switch">
+            <p>Already have an account?
+                <a href="#" onclick="showLogin()">Login Here</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+function showRegister() {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("registerBox").style.display = "block";
+}
+
+function showLogin() {
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("registerBox").style.display = "none";
+}
+
+function goToHome() {
+    window.location.href = "index.html"; 
+}
+</script>
+
+</body>
+</html>
